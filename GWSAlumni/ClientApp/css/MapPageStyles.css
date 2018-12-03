@@ -9,12 +9,25 @@
     height:500px;width:600px;
 }
 .playerCard{
+    margin-left: 20px;
+    overflow: auto;
     width: 300px;
+    min-height: 300px;
+    height: auto;
     border-image-width: 1px;
     border-color: black;
     border: solid;
     border-radius: 1%;
-    position: center;
+}
+.searchbar{
+    width: 300px;
+}
+.profileImage{
+    width:100px;
+    height:100px;
+    position: relative;
+    float: right;
+    margin-inside: 20px ;
 }
 
 

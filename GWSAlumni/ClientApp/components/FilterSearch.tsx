@@ -8,16 +8,31 @@ import {AlumniCard} from "./AlumniCard";
 interface AlumniCardInterface{
   name: string;
   bio: string;
+  pronouns: string;
+  contact: string;
+  location: locationInterface;
+ // img: string;
 }
+interface locationInterface{
+    lat: string;
+    lng: string;
+}
+
 interface FilterState {
     allcards: AlumniCardInterface[];
     cardsToShow: AlumniCardInterface[]; //data to display 
     searchValue: string; //value of search box
 }
+var bio = "bio bio bio bio bio biobio bio bio bio bio bio bio bio bio bio bio bio bio bio bio"+ 
+           "bio bio bio bio bio biobio bio bio bio bio bio bio bio bio bio bio bio bio bio bio"+
+            "bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio";
 
-var allcards1 = [{name: "Katie Kopecky", bio: "words"}, {name: "Example Person", bio: "more words"}, {name: "Example C", bio: "different words"},
-                {name: "Example Again", bio: "another thing"} , {name: "Another Person ", bio: "Reproductive Justice"},
-                {name: "Final Person", bio: "Prison Industrial Complex"}]; 
+var allcards1 = [{name: "Katie Kopecky", bio: bio, pronouns: "she/her/hers", contact: "kkopecky@wisc.edu", location: {lat: "N", lng:"S"} }, 
+    {name: "Example Person", bio: "more words", pronouns: "", contact: "person@wisc.edu", location: {lat: "N", lng:"S"},img: ""}, 
+    {name: "Example C", bio: "different words Reproductive Justice words words words", pronouns: "she/her/hers",contact: "7089909302", location: {lat: "N", lng:"S"}},
+    {name: "Example Again", bio: "another thing", pronouns: "", contact: "person@wisc.edu", location: {lat: "N", lng:"S"} } , 
+    {name: "Another Person ", bio: "Reproductive Justice", pronouns: "she/her/hers", contact: "867-5309", location: {lat: "N", lng:"S"}},
+    {name: "Final Person", pronouns: "he/him/his", bio: "Prison Industrial Complex", contact: "person@wisc.edu, person@gmail.com", location: {lat: "N", lng:"S"}}]; 
 
 export class FilterSearch extends React.Component<any, FilterState> 
 {
@@ -31,9 +46,9 @@ export class FilterSearch extends React.Component<any, FilterState>
     public render() {
 
         return <div>
-            <input placeholder="begin typing find people" type="text" value={this.state.searchValue}  onChange={(e)=>this.handleChange(e)} />
+            <input className="searchbar" placeholder="begin typing find people" type="text" value={this.state.searchValue}  onChange={(e)=>this.handleChange(e)} />
 
-            <CardList cards={this.state.cardsToShow}/>
+            <CardList cards={this.state.cardsToShow} currSearchVal={this.state.searchValue}/>
 
         </div>;
     }
@@ -52,12 +67,18 @@ export class FilterSearch extends React.Component<any, FilterState>
 //define props and functional component wit
 interface Props{
     cards: AlumniCardInterface[];
+    currSearchVal: string;
 }
-function  CardList (props: Props){
+function CardList (props: Props){
+    if (props.currSearchVal == ""){
+        return <div></div>;
+    }
+        
     const cardList = props.cards;
     const cardsToDisplay = cardList.map((card) =>
-            <AlumniCard name={card.name} bio={card.bio}/>
+            <AlumniCard name={card.name} bio={card.bio} preferredPronouns={card.pronouns} location={card.location} contactInfo={card.contact}/>
     );
+    
     return (
         <ul>{cardsToDisplay}</ul>
     );

@@ -55,6 +55,16 @@
         "@types/react-router": "4.0.12"
       }
     },
+    "@types/reactstrap": {
+      "version": "6.4.3",
+      "resolved": "https://registry.npmjs.org/@types/reactstrap/-/reactstrap-6.4.3.tgz",
+      "integrity": "sha512-+L26oBxuQRfGCbnWiyzY/u7wZl0pZRMjBnOuQpA1XegD/g3/wc9lDL+14hnWUIaJ/vacEQDrDIEOByGLmtIohg==",
+      "dev": true,
+      "requires": {
+        "@types/react": "15.0.35",
+        "popper.js": "1.14.6"
+      }
+    },
     "@types/webpack-env": {
       "version": "1.13.0",
       "resolved": "http://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.13.0.tgz",
@@ -3435,6 +3445,12 @@
       "requires": {
         "pinkie": "2.0.4"
       }
+    },
+    "popper.js": {
+      "version": "1.14.6",
+      "resolved": "https://registry.npmjs.org/popper.js/-/popper.js-1.14.6.tgz",
+      "integrity": "sha512-AGwHGQBKumlk/MDfrSOf0JHhJCImdDMcGNoqKmKkU+68GFazv3CQ6q9r7Ja1sKDZmYWTckY/uLyEznheTDycnA==",
+      "dev": true
     },
     "posix-character-classes": {
       "version": "0.1.1",
