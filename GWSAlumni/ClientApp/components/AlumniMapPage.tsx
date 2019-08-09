@@ -4,7 +4,8 @@ import { Container, Row, Col } from 'reactstrap';
 import {AlumniMap} from './AlumniMap';
 import {AlumniCard} from "./AlumniCard";
 import {FilterSearch} from './FilterSearch';
-import {AlumniCardInterface} from './FilterSearch'
+import {AlumniCardInterface} from './FilterSearch';
+import {Form} from './Form'
 
 
 
@@ -20,6 +21,7 @@ export class AlumniMapPage extends React.Component<any, MapPageState> {
         this.getAlumniToShowInMap = this.getAlumniToShowInMap.bind(this)
     }
     render(){
+        
         return  <div>
             
                 <h1>Map of GWS Alumni</h1>
@@ -32,7 +34,9 @@ export class AlumniMapPage extends React.Component<any, MapPageState> {
                       <Col lg="5">
                         <FilterSearch action={this.getAlumniToShowInMap}/>
                       </Col>
+                       
                     </Row>
+                        <Form>Add Person </Form>
                     </Container>
                 </div>;
     }

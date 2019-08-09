@@ -3,6 +3,7 @@ import { RouteComponentProps } from 'react-router';
 import '../css/MapPageStyles.css';
 import {ChangeEvent} from "react";
 import {AlumniCard} from "./AlumniCard";
+import { Button } from 'reactstrap';
 
 //use to store person info
 export interface AlumniCardInterface{
@@ -23,8 +24,9 @@ var bio = "bio bio bio bio bio biobio bio bio bio bio bio bio bio bio bio bio bi
            "bio bio bio bio bio biobio bio bio bio bio bio bio bio bio bio bio bio bio bio bio"+
             "bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio";
 
-var allcards1 = [{name: "Katie Kopecky", bio: bio, pronouns: "she/her/hers", contact: "kkopecky@wisc.edu", location: "43.073051, -89.401230" }, 
-    {name: "Example Person", bio: "more words", pronouns: "", contact: "person@wisc.edu", location: "",img: ""}, 
+var allcards1 = [{name: "Final Person", pronouns: "he/him/his", bio: "Prison Industrial Complex", contact: "person@wisc.edu, person@gmail.com", location: "44.073051, -87.401230"},
+    {name: "Katie Kopecky", bio: bio, pronouns: "she/her/hers", contact: "kkopecky@wisc.edu", location: "43.073051, -89.401230" }, 
+    {name: "Example Person", bio: "more words", pronouns: "", contact: "person@wisc.edu", location: ""}, 
     {name: "Example C", bio: "different words Reproductive Justice words words words", pronouns: "she/her/hers",contact: "7089909302", location: "43.038902, -87.906471"},
     {name: "Example Again", bio: "another thing", pronouns: "", contact: "person@wisc.edu", location: "40.730610, -73.935242" } , 
     {name: "Another Person ", bio: "Reproductive Justice", pronouns: "she/her/hers", contact: "867-5309", location: "37.733795, -122.446747"},
